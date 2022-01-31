@@ -24,7 +24,6 @@ var getWeather = function (event) {
   }
   saveSearch();
   renderSearch();
-  //searchHistory(city);
 }
 
 var saveSearch = function () {
@@ -38,6 +37,7 @@ function renderSearch() {
     button.classList = "btn-outline-secondary";
     button.setAttribute("value", cities[i]);
     button.textContent = cities[i];
+    button.style.color = "red";
     searchHistoryEl.appendChild(button);
   }
 }
@@ -57,6 +57,8 @@ var getCityWeather = function (city) {
 var showWeather = function (weather, cities) {
 
   currentWeatherEl.textContent = cities;
+  currentWeatherEl.style.fontSize = "x-large";
+  currentWeatherEl.style.color = "red";
   currentWeatherEl.classList = "card bg-primary text-center";
 
   var date = document.createElement("h4");
@@ -107,8 +109,15 @@ var uvIndex = function (index) {
   uvIndexEl.classList = "card-body text-light";
   uvIndexEl.textContent = "UV Index: " + index.value;
   currentWeatherEl.appendChild(uvIndexEl);
+  uvIndexEl.classList = "list-group-item";
 
-  //searchHistory ()
+  if (index.value <=2) {
+    uvIndexEl.classList = "good";
+  } else if (index.value >2 && index.value <=8) {
+    uvIndexEl.classList = "moderate";
+  } else if (index.value >8) {
+    uvIndexEl.classList = "extreme";
+  }
 }
 
 var get5DayWeather = function (city) {
@@ -124,9 +133,8 @@ var get5DayWeather = function (city) {
 };
 
 var show5DayWeather = function (weather) {
-  // var element = document.getElementById("hide");
-  //   Element.classList.remove("hide5Day");
-  weather5DayEl.textContent = "";
+  weather5DayEl.textContent = "5-Day Forecast";
+  weather5DayEl.style.fontSize = "x-large";
 
   var forecast = weather.list;
   for (var i = 5; i < forecast.length; i = i + 8) {

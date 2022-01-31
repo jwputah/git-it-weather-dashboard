@@ -1,3 +1,18 @@
 .navbar {
     color: red;
 }
+
+h6.good {
+    color:black;
+    background-color: green;
+}
+
+h6.moderate {
+    color: black;
+    background-color: yellow;
+}
+
+h6.extreme {
+    color: black;
+    background-color: red;
+}
