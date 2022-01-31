@@ -1,13 +1,13 @@
 # git-it-weather-dashboard
 
-Create a weather application that allows users to search a city for current and 5-day forecast weather. <br>
+Create a weather application that allows users to search for a city's current and 5-day forecasted weather. <br>
 Application saves city search. <br>
 application displays city name, date, weather icon, temperature, humidity, wind speed and uv index. <br>
 Uv index displays color coding to indicate conditions. <br>
 
 ### Built With
 
-HTML <br> CSS/Botstrap <br> javascript
+HTML <br> CSS/Bootstrap <br> javascript
 
 ### Deployed Page
 
@@ -19,7 +19,7 @@ https://jwputah.github.io/git-it-weather-dashboard/
 
 ##### Contributions
 
-Made with :heart: byt Joshua Pace
+Made with :heart: by Joshua Pace
 
 
 
