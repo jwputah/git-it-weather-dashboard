@@ -37,7 +37,7 @@ function renderSearch() {
     button.classList = "btn-outline-secondary";
     button.setAttribute("value", cities[i]);
     button.textContent = cities[i];
-    button.style.color = "red";
+    button.style.color = "black";
     searchHistoryEl.appendChild(button);
   }
 }
@@ -57,32 +57,37 @@ var getCityWeather = function (city) {
 var showWeather = function (weather, cities) {
 
   currentWeatherEl.textContent = cities;
-  currentWeatherEl.style.fontSize = "x-large";
-  currentWeatherEl.style.color = "red";
-  currentWeatherEl.classList = "card bg-primary text-center";
+  currentWeatherEl.style.fontSize = "35px";
+  currentWeatherEl.style.color = "black";
+  currentWeatherEl.classList = "card border bg-primary text-center";
+  currentWeatherEl.style.height = '823px';
 
-  var date = document.createElement("h4");
-  date.classList = "card-body text-light m-2";
+  var date = document.createElement("div");
+  date.classList = "card-text text-light";
+  date.style.fontSize = "20px";
   date.textContent = moment(weather.dt.value).format("MMM D, YYYY");
   currentWeatherEl.appendChild(date);
 
   var weatherIcon = document.createElement("img")
-  weatherIcon.classList = "card-body text-center";
+  weatherIcon.classList = "card-body";
   weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`);
   currentWeatherEl.appendChild(weatherIcon);
 
-  var tempEl = document.createElement("h5");
-  tempEl.classList = "card-body text-light";
+  var tempEl = document.createElement("div");
+  tempEl.classList = "card-text text-light";
+  tempEl.style.fontSize = "20px";
   tempEl.textContent = "Temperature: " + weather.main.temp + " °F";
   currentWeatherEl.appendChild(tempEl);
 
-  var humidityEl = document.createElement("h6");
-  humidityEl.classList = "card-body text-light";
+  var humidityEl = document.createElement("div");
+  humidityEl.classList = "card-text text-light";
+  humidityEl.style.fontSize = "20px";
   humidityEl.textContent = "Humidity: " + weather.main.humidity + " %";
   currentWeatherEl.appendChild(humidityEl);
 
-  var windEl = document.createElement("h6");
-  windEl.classList = "card-body text-light";
+  var windEl = document.createElement("div");
+  windEl.classList = "card-text text-light";
+  windEl.style.fontSize = "20px";
   windEl.textContent = "Wind Speed: " + weather.wind.speed + " MPH";
   currentWeatherEl.appendChild(windEl);
 
@@ -133,9 +138,9 @@ var get5DayWeather = function (city) {
 };
 
 var show5DayWeather = function (weather) {
-  weather5DayEl.textContent = "5-Day Forecast";
-  weather5DayEl.style.fontSize = "x-large";
-
+  weatherContentEl.textContent = "5-Day Forecast:";
+  weatherContentEl.style.fontSize = "35px";
+  
   var forecast = weather.list;
   for (var i = 5; i < forecast.length; i = i + 8) {
     var dailyForecast = forecast[i];
