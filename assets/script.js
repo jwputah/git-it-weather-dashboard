@@ -59,7 +59,7 @@ var showWeather = function (weather, cities) {
   currentWeatherEl.textContent = cities;
   currentWeatherEl.style.fontSize = "35px";
   currentWeatherEl.style.color = "black";
-  currentWeatherEl.classList = "card border bg-primary text-center";
+  currentWeatherEl.classList = "card border bg-primary text-center m-2";
   currentWeatherEl.style.height = '823px';
 
   var date = document.createElement("div");
@@ -139,11 +139,13 @@ var get5DayWeather = function (city) {
 
 var show5DayWeather = function (weather) {
   weatherContentEl.textContent = "5-Day Forecast:";
+  weatherContentEl.classList = "card border bg-secondary text-center";
   weatherContentEl.style.fontSize = "35px";
-  
+
   var forecast = weather.list;
-  for (var i = 5; i < forecast.length; i = i + 8) {
+  for (var i = 0; i < forecast.length; i = i + 8) {
     var dailyForecast = forecast[i];
+    
 
     var forecastEl = document.createElement("div");
     forecastEl.classList = "card bg-primary text-light m-2";
