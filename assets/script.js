@@ -70,7 +70,7 @@ var showWeather = function (weather, cities) {
 
   var weatherIcon = document.createElement("img")
   weatherIcon.classList = "card-body";
-  weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`);
+  weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${weather.weather[0].icon}@4x.png`);
   currentWeatherEl.appendChild(weatherIcon);
 
   var tempEl = document.createElement("div");
@@ -161,12 +161,12 @@ var show5DayWeather = function (weather) {
 
     var forecastTempEl = document.createElement("span");
     forecastTempEl.classList = "card-body text-center";
-    forecastTempEl.textContent = dailyForecast.main.temp + " °F";
+    forecastTempEl.textContent = "Temp: " + dailyForecast.main.temp + " °F";
     forecastEl.appendChild(forecastTempEl);
 
     var forecastHumidityEl = document.createElement("span");
     forecastHumidityEl.classList = "card-body text-center";
-    forecastHumidityEl.textContent = dailyForecast.main.humidity + "  %";
+    forecastHumidityEl.textContent = "Humidity: " +  dailyForecast.main.humidity + "  %";
     forecastEl.appendChild(forecastHumidityEl);
   }
 }

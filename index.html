@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./assets/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <title>Git It Weather Dashboard</title>
 </head>
 
@@ -26,10 +28,9 @@
                         <div>
                             <h4>Search for a City</h4>
                             <div class="input-group">
-                                <input id="cityInput" class="form-control" type="text"
+                                <input id="cityInput" class="form-control border border-primary" type="text"
                                     placeholder="Enter city to view weather">
-                                <button type="button" id="searchBtn" class="btn btn-primary"><i
-                                        class="fas fa-search"></i></button>
+                                <button type="button" id="searchBtn" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button>
                             </div>
                             <div>
                                 <div id="searchHistory" class="list-group"></div>
@@ -39,13 +40,13 @@
                 </div>
 
                 <div class="col-9">
-                    <div id="currentWeather" class="row ml-5"></div>
+                    <div id="currentWeather" class="row"></div>
                 </div>
 
                 <div class="col-12" id="weatherContent"></div>
 
                 <div class="col">
-                    <div id="fiveDay" class="row"></div>
+                    <div class="d-flex justify-content-center" id="fiveDay"></div>
                 </div>
             </div>
         </div>
